@@ -1,6 +1,8 @@
 ﻿
+using CurrencyTrader.AdoNet;
 using CurrencyTrader.Contracts;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CurrencyTrader
 {
@@ -36,6 +38,9 @@ namespace CurrencyTrader
         public void StoreTrades()
         {
             tradeStorage.Persist(trades);
+
+            SyncTradeStorage storageTemp = new SyncTradeStorage(tradeStorage.GetLogger());
+            Task.Run(() => storageTemp.Persist(trades));
         }
 
         private readonly ITradeDataProvider tradeDataProvider;

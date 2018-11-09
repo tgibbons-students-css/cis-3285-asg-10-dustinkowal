@@ -43,5 +43,12 @@ namespace CurrencyTrader.AdoNet
 
             logger.LogInfo("{0} trades processed", trades.Count());
         }
+
+        //method used to access logger
+        public ILogger GetLogger()
+        {
+            return this.logger;
+        }
+
     }
 }

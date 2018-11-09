@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AdoNetTradeStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncTradeStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CurrencyTrader.Contracts\CurrencyTrader.Contracts.csproj">
