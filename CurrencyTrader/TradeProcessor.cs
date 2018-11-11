@@ -37,8 +37,7 @@ namespace CurrencyTrader
         }
         public void StoreTrades()
         {
-            tradeStorage.Persist(trades);
-
+          //new SyncTradeSotrage object grabs logger from tradeStorage to store trades faster
             SyncTradeStorage storageTemp = new SyncTradeStorage(tradeStorage.GetLogger());
             Task.Run(() => storageTemp.Persist(trades));
         }
